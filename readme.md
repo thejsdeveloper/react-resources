@@ -56,7 +56,7 @@ Just by doing this we simply tell `React`:
 
 If you see the React Hook Flow [diagram](https://github.com/donavon/hook-flow) by [Donavan](https://twitter.com/donavon) it will be more clear.
 
-![Hook flow diagram]('./assets/images/hook-flow.png')
+![Hook flow diagram](assets/images/hook-flow.png)
 
 As per the diagram, `Lazy Initialization` happen only once in life cycle of component.
 
