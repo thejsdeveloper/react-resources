@@ -4,7 +4,7 @@
 
 ### [useState](https://beta.reactjs.org/learn/state-a-components-memory#anatomy-of-usestate)
 
-When we want our component to store some value we use `useState` hook.
+When we want our component to store some value we use `useState` hook. This value is maintained between re-renders. 
 
 **Syntax**
 
@@ -61,3 +61,110 @@ If you see the React Hook Flow [diagram](https://github.com/donavon/hook-flow) b
 As per the diagram, `Lazy Initialization` happen only once in life cycle of component.
 
 Read more about it in Kent C. Dodds [blog](https://kentcdodds.com/blog/use-state-lazy-initialization-and-function-updates).
+
+
+## useEffect
+
+Whenever we want to create some side effect we will use `useEffect` to do it. 
+
+Side effect can be anything like calling an api or reacting to some changes on state value.
+
+We want to create side effect in various scenarios, like: 
+
+* Everytime our app or component is rendering
+* When certain state value is update via `setState` 
+* Only when our app or component is `mounted` and `unmounted`
+
+`useEffect` syntax changes for each of these scenarios. A generic sytanx might be like this : 
+
+
+```js
+
+  useEffect(() => {
+    // `effect` that we want to fire goes here 
+    return () => {
+      // any `cleanup` that we want do goes here
+    }
+  }, 
+  [input] // Any dependency for which we want to fire sideeffect goes here aka dependecy array
+  )
+
+```
+
+Let's talk about `useEffect` syntax scenario wise: 
+
+
+### Everytime our app or component is rendering
+
+If we want to run our side effect for each render then we simply remove the `dependency array`: 
+
+```js 
+
+ useEffect(() => {
+    // `effect` that we want to fire goes here 
+  })
+  
+```
+
+### Only when our app or component is `mounted`
+
+If we provide a blank array as dependecy to `useEffect` then it will only run when component is mounted. 
+
+
+```js
+
+  useEffect(() => {
+    // `effect` that we want to fire goes here 
+    return () => {
+      // any `cleanup` that we want do goes here
+    }
+  }, 
+  [] // An empty depedency array
+  )
+
+```
+
+### When certain state value is update via `setState`
+
+If we provide a value or set of values to dependecy array the `useEffect` will run every time one of the values in dependency array changes. 
+
+
+```js
+
+  useEffect(() => {
+    // `effect` that we want to fire goes here 
+    return () => {
+      // any `cleanup` that we want do goes here
+    }
+  }, 
+  [] // An empty depedency array
+  )
+
+```
+
+Before firing the Effect in `Update` phase `React` will first run a `clean up` function. You can define this clean up fuctionality as return function of the first argument to `useEffect`. Whatever is the part of the return funtion will be run on  cleanup phase in `Update` and `Unmount` phase. 
+
+If you have attached some event listners as a part of effect and you want to remove the event listener when component unmounts then you can define it in the clean up function.
+
+```js
+
+  useEffect(() => {
+    // `effect`
+    
+    return () => {
+    // CLEAN UP FUNCTIONALITY
+    }
+    
+  }, 
+  [] // your dependencies
+  )
+
+```
+
+
+
+![Hook flow diagram](assets/images/hook-flow.png)
+
+
+
+
