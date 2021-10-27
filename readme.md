@@ -1,7 +1,5 @@
 # React Resources - A list of Learning Material
 
----
-
 ## React Hooks
 
 ### useState
