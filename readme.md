@@ -19,7 +19,7 @@ function App() {
 - Frist value in array is the `value` you ask react to store
 - Second value in array is a `setter function` which will update the stored value and ask React to re-render the component.
 
-* [Lazy initialization](https://beta.reactjs.org/reference/usestate#passing-an-initializer-function-to-usestate)
+#### [Lazy initialization](https://beta.reactjs.org/reference/usestate#passing-an-initializer-function-to-usestate)
 
   When using `useState` always remember that the initial value that we pass to `useState` will be used only once when React mounts the component for the first time. After that it will be ignored. But if the value you are passing to the `useState` is returned from the result of a epensive calculation or it is a `IO` operation like reading from `localStorage` or `sessionStorage`, do not pass it directly to `useState` like this
 
