@@ -169,7 +169,7 @@ If you have attached some event listners as a part of effect and you want to rem
 ## Where to put state decision tree
 
 
-This image is taken from Kent C Dodds blog [State Colocation will make your React app faster](https://kentcdodds.com/blog/state-colocation-will-make-your-react-app-faster). Refer to blog for better understanding this flow
+This image is taken from Kent C Dodds' blog [State Colocation will make your React app faster](https://kentcdodds.com/blog/state-colocation-will-make-your-react-app-faster). Refer to blog for better understanding this flow
 
 ![stat decision tree](assets/images/where-to-put-state.png)
 
