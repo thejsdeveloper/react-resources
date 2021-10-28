@@ -166,7 +166,7 @@ If you have attached some event listners as a part of effect and you want to rem
 ![Hook flow diagram](assets/images/hook-flow.png)
 
 
-## Where to put state decision tree
+## Where to put React State: A decision tree
 
 
 This image is taken from Kent C Dodds' blog [State Colocation will make your React app faster](https://kentcdodds.com/blog/state-colocation-will-make-your-react-app-faster). Refer to blog for better understanding this flow
